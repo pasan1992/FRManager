@@ -1,0 +1,209 @@
+﻿body {
+}
+.page-scroll a.btn-circle {
+		width: 40px;
+		height: 40px;
+		margin-top: 10px;
+		padding: 7px 0;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		font-size: 20px;
+	}
+ .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+.intro {
+	width:100%;
+	position:relative;
+	
+	background: url(../img/bg1.jpg) no-repeat top center;
+}
+
+#intro.intro {
+	padding:20% 0 0 0;
+}
+
+.intro .slogan {
+	text-align: center;
+
+}
+
+.intro .page-scroll {
+	text-align: center;
+}
+
+.brand-heading {
+    font-size: 40px;
+}
+
+.intro-text {
+    font-size: 18px;
+}
+
+.intro .slogan h2 {
+	color: #FFF;
+	text-shadow: none;
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 700;
+	font-family: Montserrat, sans-serif;
+	background-color: rgba(0, 0, 0, 0);
+	text-decoration: none;
+	text-transform: uppercase;
+	border-width: 0px;
+	border-color: #000;
+	border-style: none;
+	text-shadow: -1px 0 1px #000;
+}
+
+.intro .slogan h4 {
+	color: #fff;
+	text-shadow: -1px 1px 1px #000;
+}
+
+.form-section {
+   
+    padding-bottom:13px;
+	display:block;
+    position:relative;
+    z-index:120;
+}
+
+.btn {
+	border-radius: 0;
+    text-transform: uppercase;
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle.btn-dark {
+    border: 2px solid #666;
+    color: #666;
+}
+
+
+.btn-circle:hover,
+.btn-circle:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+.btn-circle.btn-dark :hover,
+.btn-circle.btn-dark :focus {
+    outline: 0;
+    color: #999;
+    background: #fff;
+}
+
+.btn-circle.btn-dark :hover i,
+.btn-circle.btn-dark :focus i{
+    color: #999;
+}
+
+.page-scroll .btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.page-scroll .btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+.page-scroll a.btn-circle {
+		width: 40px;
+		height: 40px;
+		margin-top: 10px;
+		padding: 7px 0;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		font-size: 20px;
+	}
+
+@-webkit-keyframes pulse {    
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {    
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.btn-skin:hover,
+.btn-skin:focus,
+.btn-skin:active,
+.btn-skin.active {
+  color: #fff;
+  background-color: #666;
+  border-color: #666;
+}
+
+
+.btn-default:hover,
+.btn-default:focus {
+    border: 1px solid #28c3ab;
+    outline: 0;
+    color: #000;
+    background-color: #28c3ab;
+}
+
+.btn-huge {
+    padding: 25px;
+    font-size: 26px;
+}
+

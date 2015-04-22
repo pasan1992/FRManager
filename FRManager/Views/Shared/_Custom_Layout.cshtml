@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewBag.Title = "_Custom_Layout";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+
+
+
+    <div id="wrapper_main" class="wrapper_normal row" style="margin:0px !important;">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin:0px !important; padding:0px !important;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="margin:0px !important; padding:0px !important;">
+
+                <a class="navbar-brand" style="outline:0px !important;" href="" id="t_button" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="fa fa-bars color_light" id="toggle_button" style="color:blue; font-size:20px;"></span>
+
+                </a>
+
+            </div>
+            <!-- Top Menu Items -->
+            <!-- /input-group -->
+
+            <ul class="nav navbar-right top-nav" style="margin:0px !important; padding:0px !important;">
+
+                <li>
+                    <div class="input-group " style="margin-top:10px !important;padding-right:30% !important;">
+
+
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span><form style="margin:0px !important; padding:0px;">
+                            <input type="text" class="form-control" placeholder="Search for..." size="500">
+
+                        </form>
+                    </div>
+
+                </li>
+
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope color_blude"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"></h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o "></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"></h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"></h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell color_blude"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    @Html.Partial("_LoginPartial")
+                </li>
+
+            </ul>
+
+
+
+
+
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div id="menu1" class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav" id="menu2">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                    <li>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+
+    <!--page code begin -->
+    <div class="col-md-1"></div>
+    <div id="page-wrapper" class="col-md-11" style="margin:0px !important; padding-left:10px; padding-right:10px;">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        @RenderBody();
+
+    </div>
+    <!-- /#page-wrapper -->
+    <!-- page code end -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <!-- Morris Charts JavaScript -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

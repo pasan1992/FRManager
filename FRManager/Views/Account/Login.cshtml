@@ -1,0 +1,44 @@
+﻿@model FRManager.Models.LoginViewModel
+@using System.Text.RegularExpressions;
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Login_Layout.cshtml";
+}
+
+
+
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+         
+       
+        
+        var st1 = "";
+        var st2 =@Html.ValidationSummary(true);
+
+        if (st2 == null) st1 = "PLEASE ENTER YOUR USER NAME AND PASSWORD";
+        else st1 = st2.ToString();
+       
+        //login page image
+        // id attribute of input used in script at _login_Layout_
+        <div><img src="http://www.prepbootstrap.com/Content/images/shared/squad/team/1.jpg" alt="" class="img-responsive img-circle" /></div>
+        <br />
+
+        <p>
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder ="User Name", id="user_name"}) 
+        </p>
+
+        <p>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", id="password_of"}  )
+        </p>
+
+        <p> <input type="submit" value="Log in" class="btn btn-custom" id="submit_button"/></p>
+     <h3 style="color: #3366FF; font-size: small;">@Html.Raw(@st1)</h3>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+

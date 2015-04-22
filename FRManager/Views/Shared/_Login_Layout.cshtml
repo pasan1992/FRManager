@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "_Login_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @using System.Text.RegularExpressions;
+    @*custome made css file*@ 
+    <link type="text/css" href="~/Content/Login.css" rel="stylesheet" />
+
+</head>
+<body style="margin: 0px !important; padding: 0px !important;">
+    @*black background div*@
+        <div class="row" style="background:#0e0e0e;height:30%;width:100%;z-index:-1;position:absolute;padding-left:0px; margin:0px;"></div>
+    
+    @*form with the image*@
+    <div class="row" style="margin:0px; padding:0px;">
+        <div class="container-fluid">
+            @*div with the render tag*@
+            <div class="col-md-3 col-centered " style="text-align:center;">  @RenderBody(); </div>
+        </div>
+    </div>
+
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
+
+    <script>
+        //client side validation script
+        //function validate decleration
+        function validate(event) {
+       
+            var name = $("#user_name").val();
+            var password = $("#password_of").val().length;
+
+            if (name == "") {
+                //prevent from from passing to controller
+                event.preventDefault();
+                //highlight the input field
+                $("#user_name").attr("placeholder", "User Name").css("border-color", "red").css("border-style","solid").css("border-width","1");
+            }
+                //un-highlight the input field
+            else { $("#user_name").attr("placeholder", "User Name").css("border-color", "red").css("border-style", "solid").css("border-width", "0"); }
+
+            if (password === 0) {
+                //prevent from from passing to controller
+                event.preventDefault();
+                //highlight the input field
+                $("#password_of").attr("placeholder", "Password").css("border-color", "red").css("border-style", "solid").css("border-width", "1");
+            }
+                //un-highlight the input field
+            else { $("#password_of").attr("placeholder", "Password").css("border-color", "red").css("border-style", "solid").css("border-width", "0"); }
+
+
+        }
+
+//validate when button clicked
+        $("#submit_button").click(validate)
+//validate when moving to next input field
+        $("#user_name").blur(validate)
+        $("#password_of").blur(validate)
+</script>
+</body>
+</html>
+
