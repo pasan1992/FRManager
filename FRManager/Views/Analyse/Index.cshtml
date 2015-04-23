@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FRManager.Models.DyanamicDataModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.user_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpu_usage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.memory_usage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.disk_free_space)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.record_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpu_usage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.memory_usage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.disk_free_space)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.record_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.mac }) |
+            @Html.ActionLink("Details", "Details", new { id=item.mac }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.mac })
+        </td>
+    </tr>
+}
+
+</table>
