@@ -1,0 +1,49 @@
+﻿@model FRManager.Models.DyanamicDataModel
+
+@{
+    ViewBag.Title = "currentCPU";
+    Layout = "~/Views/Shared/_Custom_Layout.cshtml";
+}
+
+
+<h2>currentCPU</h2>
+
+
+<div class="canvas-holder">
+    <canvas id="cpu-usage" />
+</div>
+
+
+
+
+
+@Model.cpu_usage
+
+<script>
+    var cpudata = [
+              {
+
+                  value: '@Model.cpu_usage',
+                  color: "#F7464A",
+                  highlight: "#FF5A5E",
+                  label: "Used"
+              },
+              {
+
+                  value: 100 - '@Model.cpu_usage',
+                  color: "#3d3d3d",
+                  highlight: "#aaa4a4",
+                  label: "Unused"
+              }
+    ];
+
+    window.onload = function () {
+        var c3 = document.getElementById("cpu-usage").getContext("2d");
+        window.cpuchart = new Chart(c3).Doughnut(cpudata, { responsive: true });
+
+
+    };
+    </script>
+
+
+

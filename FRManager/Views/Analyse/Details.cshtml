@@ -1,0 +1,58 @@
+﻿@model FRManager.Models.DyanamicDataModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DyanamicDataModel</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpu_usage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpu_usage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memory_usage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memory_usage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.disk_free_space)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disk_free_space)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.record_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.record_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.mac }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -33,5 +33,10 @@ namespace FRManager.Controllers
 
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+            return View();
+        }
     }
 }
