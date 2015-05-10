@@ -1,0 +1,104 @@
+﻿
+@model FRManager.Models.DyanamicDataModel
+@{
+    ViewBag.Title = "CheckGraphs";
+    Layout = "";
+   
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/Chart.js"></script>
+
+    <body>
+        <div class="canvas-holder col-md-5">
+            <canvas id="cpu-usage" />
+        </div>
+
+        <input type="text" id="getID"/>
+        <input type="submit" id="button1"/>
+      
+
+
+
+        <div class="col-md-3" id="grapContainer"  >
+          
+
+        </div>
+
+        @Ajax.ActionLink("Click", "view1", new AjaxOptions()
+   
+   {
+       HttpMethod = "GET",
+       UpdateTargetId = "grapContainer",
+       
+       InsertionMode = InsertionMode.Replace
+   })
+      
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/custom")
+        @Scripts.Render("~/bundles/charts")
+
+  
+
+        <script>
+            $(document).ready(function () {
+
+
+                var function1 = function () {
+
+                    var IDnum = $("#getID").val().toString();
+                
+                   
+                   
+                    //var numID = Convert.ToInt32(ID);
+                   
+                   
+                    var idnum = {ID:IDnum}
+
+                    $.ajax({
+                        type: "POST",
+                        url: "view1",
+                        data: {ID:IDnum},
+                        
+                        dataType: "html",
+                        
+                            
+                        success: function (data) {
+                          
+                            $("#grapContainer").html(data);
+
+
+                            var c3 = document.getElementById("cpu-usage").getContext("2d");
+                            window.cpuchart = new Chart(c3).Doughnut(cpudata, { responsive: true });
+                        }
+                    })
+                   
+
+                };
+                   
+              
+
+                $("#getID").change(function1);
+
+            });
+
+
+         
+
+
+        </script>
+
+</body>
+
+
+
+
+
+
+
+
+
