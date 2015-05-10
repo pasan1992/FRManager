@@ -136,6 +136,49 @@ namespace FRManager.Controllers
         }
 
 
+        public ActionResult CheckGraphs()
+        {
+            DyanamicDataModel cpuResult = db.DynamicDatabase.Find(1);
+            if (cpuResult == null)
+            {
+                return HttpNotFound();
+            }
+
+         
+            return View(cpuResult);
+
+        }
+
+
+
+
+   [HttpPost]
+        public ActionResult CheckGraphs(int id)
+        {
+            DyanamicDataModel cpuResult = db.DynamicDatabase.Find(id);
+            if (cpuResult == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_showCPU", cpuResult);
+
+            }
+            return View(cpuResult);
+
+        }
+
+
+   public PartialViewResult view1(string ID)
+   {
+        var user = db.DynamicDatabase.Where(m => m.user_name.Contains(ID));
+;       return PartialView("_showCPU",user);
+   }
+      
+
+
 
 
 

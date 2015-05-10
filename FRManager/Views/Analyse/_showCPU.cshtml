@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FRManager.Models.DyanamicDataModel> 
+
+@{
+ 
+    Layout = "";
+}
+<script src="~/Scripts/Chart.js"></script>
+
+<div class="canvas-holder col-md-5">
+    <canvas id="cpu-usage" />
+</div>
+@DateTime.Now.ToLongTimeString();
+
+@foreach (var item in Model) {
+    @Html.DisplayFor(modelItem => item.user_name)
+    
+    
+    
+    
+    <script>
+
+
+
+    var cpudata = [
+     {
+
+         value: '@item.cpu_usage',
+         color: "#F7464A",
+         highlight: "#FF5A5E",
+         label: "Used"
+     },
+     {
+
+         value: 100 - '@item.cpu_usage',
+         color: "#3d3d3d",
+         highlight: "#aaa4a4",
+         label: "Unused"
+     }
+    ];
+
+
+
+
+       
+ 
+
+</script>
+    
+    
+    
+    
+}
+
+
+
