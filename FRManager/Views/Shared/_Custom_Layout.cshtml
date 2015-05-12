@@ -32,6 +32,7 @@
                     <span class="fa fa-bars color_light" id="toggle_button" style="color:blue; font-size:20px;"></span>
 
                 </a>
+                
 
             </div>
             <!-- Top Menu Items -->
@@ -40,20 +41,14 @@
             <ul class="nav navbar-right top-nav" style="margin:0px !important; padding:0px !important;">
 
                 <li>
-                    <div class="input-group " style="margin-top:10px !important;padding-right:26% !important;">
-
-
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span><form style="margin:0px !important; padding:0px;">
-                            <input type="text" class="form-control" placeholder="Search for..." size="500">
-
-                        </form>
+                    <div class="form-group has-success has-feedback" style=" margin: 10px !important; padding: 0px !important;">
+                        <label class="control-label sr-only" for="inputSuccess5">Hidden label</label>
+                        <input type="text" class="form-control" id="inputSuccess5" aria-describedby="inputSuccess5Status">
+                       
+                      
                     </div>
-
                 </li>
-
-
+             
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope color_blude"></i> <b class="caret"></b></a>
@@ -191,8 +186,8 @@
     <!--page code begin -->
     <div class="col-md-1"></div>
     <div id="page-wrapper" class="col-md-11" style="margin:0px !important; padding-left:10px; padding-right:10px;">
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-        @RenderBody();
+        
+        @RenderBody()
 
     </div>
     <!-- /#page-wrapper -->
