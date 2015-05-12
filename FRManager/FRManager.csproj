@@ -184,6 +184,7 @@
     <Content Include="Content\loginAnimate.css" />
     <Content Include="Content\loginStyle.css" />
     <Content Include="Content\sb-admin.css" />
+    <Content Include="Content\simple-sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
