@@ -175,16 +175,32 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dash-unit.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\3.png" />
+    <Content Include="Content\img\5.png" />
+    <Content Include="Content\img\6.png" />
     <Content Include="Content\img\bg-image.jpg" />
+    <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\c.jpg" />
+    <Content Include="Content\img\plain-grey-background.jpg" />
+    <Content Include="Content\img\user.jpg" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\loginAnimate.css" />
     <Content Include="Content\loginStyle.css" />
+    <Content Include="Content\mask.css" />
     <Content Include="Content\sb-admin.css" />
     <Content Include="Content\simple-sidebar.css" />
     <Content Include="favicon.ico" />
@@ -198,8 +214,10 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\com-chart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
