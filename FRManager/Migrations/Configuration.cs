@@ -1,3 +1,4 @@
+using System.Data.Entity.Migrations;
 namespace FRManager.Migrations
 {
     using FRManager.Models;
@@ -52,3 +53,29 @@ namespace FRManager.Migrations
         }
     }
 }
+
+
+
+
+
+internal sealed class Configuration : DbMigrationsConfiguration<FRManager.Models.DynamicDBContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "FRManager.Models.ApplicationDbContext";
+        }
+
+        //protected override void Seed(FRManager.Models.ApplicationDbContext context)
+        //{
+
+        //}
+    }
+
+
+
+
+
+
+
+

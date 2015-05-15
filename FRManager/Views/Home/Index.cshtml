@@ -4,7 +4,91 @@
 }
 
 <div class="container-fluid">
-    <div class="row">
+   
+    @*current usage*@
+     <div class="row">
+        
+
+         @*Static info*@
+         <div class="col-md-3">
+             <div class="dash-unit " style="height: 610px;">
+
+                 <p>Device Profile</p>
+                 <hr>
+                 <div class="thumbnail">
+                     <i class="fa fa-desktop" style="font-size:100px;color:#000000;padding-top:20px;"></i>
+                 </div>
+
+                 <h1>Computer 001</h1>
+                 <h3 class="dash-unitH3">Section B</h3>
+
+             </div>
+         </div>
+
+         @*CPU USage*@
+         <div class="col-md-3">
+
+             <div class="dash-unit">
+                 <p>Memory Usage</p>
+                 <hr><br />
+                 <div class="load">
+                     <div class="canvas-holder">
+                         <canvas id="cpu-usage" />
+                     </div>
+                 </div>
+                 <h2>70%</h2>
+             </div>
+          
+          </div>
+
+          @*Memory Usage*@
+        <div class="col-md-3">
+
+            <div class="dash-unit">
+                <p>Memory Usage</p>
+                <hr><br />
+                <div class="load">
+                    <div class="canvas-holder">
+                        <canvas id="memory-usage" />
+                    </div>
+                </div>
+                <h2>70%</h2>
+            </div>
+
+        </div>
+              
+
+       @*Disk Usage*@
+       <div class="col-md-3">
+           
+           <div class="dash-unit">
+               <p>Disk Usage</p>
+               <hr><br />
+               <div class="load">
+                   <div class="canvas-holder">
+                       <canvas id="disk-usage" />
+                   </div>
+               </div>
+               <h2>45%</h2>
+           </div> 
+
+  </div>
+   @*END OF CURRENT DETAIL RAW*@
+
+
+
+
+
+
+</div>
+<script src="~/Scripts/com-chart.js"></script>
+
+
+
+
+
+         </div>
+    @*<div class="row">
 
         <!-- USER PROFILE BLOCK -->
         <div class="col-sm-3 col-lg-3">
@@ -35,6 +119,11 @@
 
                    
                 </div>
+
+
+
+
+
                                 <div class="dash-unit ">
                                     <p>CPU Usage</p>
                                     <hr><br />
@@ -52,6 +141,10 @@
 
                         <!-- memory usage block-->
                         <div class="col-sm-3 col-lg-3">
+
+
+
+
                             <div class="dash-unit">
                                 <p>Memory Usage</p>
                                 <hr><br />
@@ -111,5 +204,5 @@
 
 
                         </div><!--end of 1st raw-->
-                    </div><!--container-->
+                    </div><!--container-->*@
 
