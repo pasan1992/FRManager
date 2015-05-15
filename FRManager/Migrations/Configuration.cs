@@ -66,10 +66,10 @@ internal sealed class Configuration : DbMigrationsConfiguration<FRManager.Models
             ContextKey = "FRManager.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(FRManager.Models.ApplicationDbContext context)
-        {
+        //protected override void Seed(FRManager.Models.ApplicationDbContext context)
+        //{
 
-        }
+        //}
     }
 
 
