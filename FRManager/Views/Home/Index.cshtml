@@ -3,4 +3,113 @@
     Layout = "~/Views/Shared/_Custom_Layout.cshtml";
 }
 
-<h1> Hello Kalani </h1>
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- USER PROFILE BLOCK -->
+        <div class="col-sm-3 col-lg-3">
+            <div class="dash-unit " style="height: 610px;">
+                
+                <p>Device Profile</p>
+                <hr>
+                <div class="thumbnail">
+                    <i class="fa fa-desktop" style="font-size:100px;color:#000000;padding-top:20px;"></i>
+                    </div>
+              
+                <h1>Computer 001</h1>
+                <h3 class="dash-unitH3">Section B</h3>
+
+            </div>
+        </div>
+
+        <!-- cpu usage-->
+        <div class="col-sm-3 col-lg-3">
+            <div class="view">
+                <div class="caption">
+  <a href="#"  style="text-decoration: none; color: white;">
+                        <h3 style="padding-top: 40%; position:relative;text-align:center">
+                            View More
+                            <span class="fa fa-search"></span>
+                        </h3>
+                    </a>
+
+                   
+                </div>
+                                <div class="dash-unit ">
+                                    <p>CPU Usage</p>
+                                    <hr><br />
+                                    <div class="load">
+                                        <div class="canvas-holder">
+                                            <canvas id="cpu-usage" />
+                                        </div>
+                                    </div>
+                                    <h2>82%</h2>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- memory usage block-->
+                        <div class="col-sm-3 col-lg-3">
+                            <div class="dash-unit">
+                                <p>Memory Usage</p>
+                                <hr><br />
+                                <div class="load">
+                                    <div class="canvas-holder">
+                                        <canvas id="memory-usage" />
+                                    </div>
+                                </div>
+                                <h2>70%</h2>
+                            </div>
+                        </div>
+
+
+
+                        <!-- disk usage block-->
+                        <div class="col-sm-3 col-lg-3">
+                            <div class="dash-unit">
+                                <p>Disk Usage</p>
+                                <hr><br />
+                                <div class="load">
+                                    <div class="canvas-holder">
+                                        <canvas id="disk-usage" />
+                                    </div>
+                                </div>
+                                <h2>45%</h2>
+                            </div>
+                        </div>
+
+                        <!-- alert-->
+                        <div class="col-sm-3 col-lg-3">
+                            <div class="dash-unit">
+                                <p>Alert</p>
+                                <hr><br />
+                                <div class="load">
+                                    <div class="canvas-holder">
+                                        <canvas id="" />
+                                    </div>
+                                </div>
+                                <h2>70%</h2>
+                            </div>
+                        </div>
+
+
+                        <!-- monthly -->
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="dash-unit">
+                                <p>Monthly usage</p>
+                                <hr><br />
+                                <div class="load">
+                                    <div class="canvas-holderCPU">
+                                        <canvas style="width:auto;" id="" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div><!--end of 1st raw-->
+                    </div><!--container-->
+
