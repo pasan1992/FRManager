@@ -149,11 +149,11 @@ $(document).ready(function () {
             $("#currentCPUcontainer").html(data);
 
 
-            //var c3 = document.getElementById("cpu-usage").getContext("2d");
-            //window.cpuchart = new Chart(c3).Doughnut(cpudata, {
-            //    responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
+            var c3 = document.getElementById("cpu-usage").getContext("2d");
+            window.cpuchart = new Chart(c3).Doughnut(cpudata, {
+                responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
 
-            //});
+            });
         }
     })
 });
