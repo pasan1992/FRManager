@@ -24,12 +24,16 @@ namespace FRManager.Models
         public int disk_free_space { set; get; }
 
         public DateTime record_date { set; get; }
-        
+
+        [RegularExpression(@"^([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$")]
+        [StringLength(15, MinimumLength = 7)]
+        public string iq_address { set; get; }
+       
 
 
     }
 
-    public class DynamicDBContext : DbContext
+    public class DynamicDBContext1 : DbContext
     {
         public DbSet<DyanamicDataModel> DynamicDatabase { get; set; }
     }

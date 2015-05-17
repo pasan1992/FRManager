@@ -25,14 +25,14 @@ namespace FRManager
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-             bundles.Add(new ScriptBundle("~/bundles/charts").Include(
-                 "~/Scripts/Chart.js", "~/Scripts/com-chart.js"));
-                     
+            bundles.Add(new ScriptBundle("~/bundles/charts").Include(
+                "~/Scripts/Chart.js", "~/Scripts/com-chart.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css", "~/Content/bootstrap.min.css",
                       "~/Content/site.css", "~/Content/sb-admin.css", "~/Content/dash-unit.css",
-                      "~/Content/mask.css"
+                      "~/Content/mask.css", "~/Scripts/modernizr.custom.js"
                       ));
         }
     }
