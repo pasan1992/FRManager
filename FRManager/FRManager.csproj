@@ -276,7 +276,7 @@
     <Content Include="Views\Analyse\_showCPU.cshtml" />
     <Content Include="Views\Analyse\computerView.cshtml" />
     <Content Include="Views\Analyse\_CurrentCPU.cshtml" />
-    <Content Include="Views\Analyse\Partial1.cshtml" />
+    <Content Include="Views\Analyse\_CurrentMEM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

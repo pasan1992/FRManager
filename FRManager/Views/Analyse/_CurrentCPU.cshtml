@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FRManager.Models.DyanamicDataModel>
+﻿@model FRManager.Models.DyanamicDataModel
 @{
     ViewBag.Title = "_CurrentCPU";
     Layout = "";
@@ -7,10 +7,7 @@
 <link href="~/Content/mask.css" rel="stylesheet" />
 <script src="~/Scripts/modernizr.custom.js"></script>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@Scripts.Render("~/bundles/custom")
-@Scripts.Render("~/bundles/charts")
+
 <div class="view">
     <div class="caption">
         <h4 style="padding-top: 20%; position:relative;text-align:center">
@@ -31,34 +28,44 @@
         <div class="canvas-holder" style="height:150px;">
             <canvas id="cpu-usage" />
         </div><br />
-        <h2>@foreach (var item in Model)
-        { @item.cpu_usage} %</h2>
+        <h2>@Model.cpu_usage%</h2>
     </div>
 </div>
-@foreach (var item in Model)
-{
+
 
     <script>
 
         var cpudata = [
         {
-            value: '@item.cpu_usage',
+            value: '@Model.cpu_usage',
             color: "#0c0c40",
             highlight: "#7265ea",
             label: "Used"
         },
         {
-            value: 100 - '@item.cpu_usage',
+            value: 100 - '@Model.cpu_usage',
             color: "#3d3d3d",
             highlight: "#aaa4a4",
             label: "Rest"
         }
         ];
+
+
+
+        $("[rel='tooltip']").tooltip();
+
+        $('.view').hover(
+            function () {
+                $(this).find('.caption').slideDown(600); //.fadeIn(250)
+            },
+            function () {
+                $(this).find('.caption').slideUp(600); //.fadeOut(205)
+            }
+        );
     </script>
 
 
 
-}
 
 
 

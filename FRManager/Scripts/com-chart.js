@@ -17,20 +17,20 @@ var doughnutData = [
 ];
 
 /*memory usage-dougnut */
-var doughnutData2 = [
-        {
-            value: 70,
-            color: "#3f8712",
-            highlight: "#a0f185",
-            label: "Used"
-        },
-        {
-            value: 30,
-            color: "#3d3d3d",
-            highlight: "#aaa4a4",
-            label: "Rest"
-        }
-];
+//var memorydata = [
+//        {
+//            value: 70,
+//            color: "#3f8712",
+//            highlight: "#a0f185",
+//            label: "Used"
+//        },
+//        {
+//            value: 30,
+//            color: "#3d3d3d",
+//            highlight: "#aaa4a4",
+//            label: "Rest"
+//        }
+//];
 
 /*cpu usage-dougnut */
 //var doughnutData3 = [
@@ -49,16 +49,16 @@ var doughnutData2 = [
 //];
 
 /*tile mask */
-$("[rel='tooltip']").tooltip();
+//$("[rel='tooltip']").tooltip();
 
-$('.view').hover(
-    function () {
-        $(this).find('.caption').slideDown(600); //.fadeIn(250)
-    },
-    function () {
-        $(this).find('.caption').slideUp(600); //.fadeOut(205)
-    }
-);
+//$('.view').hover(
+//    function () {
+//        $(this).find('.caption').slideDown(600); //.fadeIn(250)
+//    },
+//    function () {
+//        $(this).find('.caption').slideUp(600); //.fadeOut(205)
+//    }
+//);
 
 /*cpu usage-monthly-line chart */
 var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
@@ -129,23 +129,21 @@ $('body').scrollspy({
 
 
 
+function cpuUsage() {
 
 
- 
-$(document).ready(function () {
-    alert("working")
 
     $.ajax({
         type: "GET",
-        url: "cpuPartialView",
-        data: { ID: "hiran" },
+        url: "/Analyse/cpuPartialView",
+        data: { ID: idnum },
 
         dataType: "html",
 
 
 
         success: function (data) {
-            alert("working2")
+            //alert("working3")
             $("#currentCPUcontainer").html(data);
 
 
@@ -154,10 +152,46 @@ $(document).ready(function () {
                 responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
 
             });
+            return false;
         }
     })
-});
+}
+function memoryUsage() {
 
+
+
+    $.ajax({
+        type: "GET",
+        url: "/Analyse/memoryPartialView",
+        data: { ID: idnum },
+
+        dataType: "html",
+
+
+
+        success: function (data) {
+            //alert("working3")
+            $("#CurrentMemoryContainer").html(data);
+
+
+            var c3 = document.getElementById("memory-usage").getContext("2d");
+            window.cpuchart = new Chart(c3).Doughnut(memorydata, {
+                responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
+
+            });
+            return false;
+        }
+    })
+}
+
+
+function all(){
+    cpuUsage()
+    memoryUsage()
+}
+$(all)
+
+setInterval(all, 5000);
 
 
 

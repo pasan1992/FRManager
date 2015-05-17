@@ -180,9 +180,9 @@ namespace FRManager.Controllers
    
 
    //computer view controller
-   public ActionResult computerView()
+   public ActionResult computerView(int id)
    {
-       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(1);
+       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(id);
        if (cpuResult == null)
        {
            return HttpNotFound();
@@ -190,17 +190,23 @@ namespace FRManager.Controllers
 
        //if (Request.IsAjaxRequest())
        //{
-       //    return PartialView("_showCPU", cpuResult);
+       //    return PartialView("Partial1", cpuResult);
 
        //}
        return View(cpuResult);
    }
 
 
-   public PartialViewResult cpuPartialView(string ID)
+   public PartialViewResult cpuPartialView(int ID)
    {
-       var user = db.DynamicDatabase.Where(m => m.user_name.Contains("pasan"));
-       return PartialView("Partial1",user);
+       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(ID);
+       return PartialView("_CurrentCPU", cpuResult);
+   }
+
+   public PartialViewResult memoryPartialView(int ID)
+   {
+       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(ID);
+       return PartialView("_CurrentMEM", cpuResult);
    }
 
 
