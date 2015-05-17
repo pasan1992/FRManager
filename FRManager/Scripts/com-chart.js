@@ -1,5 +1,6 @@
 ﻿
 /*disk usage-dougnut */
+
 var doughnutData = [
         {
             value: 45,
@@ -32,45 +33,135 @@ var doughnutData2 = [
 ];
 
 /*cpu usage-dougnut */
-var doughnutData3 = [
-        {
-            value: 82,
-            color: "#0c0c40",
-            highlight: "#7265ea",
-            label: "Used"
-        },
-        {
-            value: 18,
-            color: "#3d3d3d",
-            highlight: "#aaa4a4",
-            label: "Rest"
-        }
-];
+//var doughnutData3 = [
+//        {
+//            value: 82,
+//            color: "#0c0c40",
+//            highlight: "#7265ea",
+//            label: "Used"
+//        },
+//        {
+//            value: 18,
+//            color: "#3d3d3d",
+//            highlight: "#aaa4a4",
+//            label: "Rest"
+//        }
+//];
 
+/*tile mask */
 $("[rel='tooltip']").tooltip();
 
 $('.view').hover(
     function () {
-        $(this).find('.caption').slideDown(250); //.fadeIn(250)
+        $(this).find('.caption').slideDown(600); //.fadeIn(250)
     },
     function () {
-        $(this).find('.caption').slideUp(250); //.fadeOut(205)
+        $(this).find('.caption').slideUp(600); //.fadeOut(205)
     }
 );
 
+/*cpu usage-monthly-line chart */
+var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
+var lineChartData = {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+        "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+        },
+    ]
+}
+
+
+
 /*onload window function */
-window.onload = function () {
-    var c2 = document.getElementById("memory-usage").getContext("2d");
-    window.myDoughnut2 = new Chart(c2).Doughnut(doughnutData2, { responsive: true });
+//window.onload = function () {
+//    var c2 = document.getElementById("memory-usage").getContext("2d");
+//    window.myDoughnut2 = new Chart(c2).Doughnut(doughnutData2, { responsive: true });
 
-    var c1 = document.getElementById("disk-usage").getContext("2d");
-    window.myDoughnut1 = new Chart(c1).Doughnut(doughnutData, { responsive: true });
+//    var c1 = document.getElementById("disk-usage").getContext("2d");
+//    window.myDoughnut1 = new Chart(c1).Doughnut(doughnutData, { responsive: true });
 
-    var c3 = document.getElementById("cpu-usage").getContext("2d");
-    window.myDoughnut3 = new Chart(c3).Doughnut(doughnutData3, { responsive: true });
-};
+//    var c3 = document.getElementById("cpu-usage").getContext("2d");
+//    window.myDoughnut3 = new Chart(c3).Doughnut(doughnutData3, { responsive: true });
+
+//    var c4 = document.getElementById("cpu-monthly").getContext("2d");
+//    window.myLine = new Chart(c4).Line(lineChartData, { responsive: true });
+
+//};
 
 
 
+
+
+
+/*progress bar */
+$(".progress-bar").animate({
+    width: "40%"
+}, 2500);
+
+$(".progress-bar2").animate({
+    width: "80%"
+}, 2500);
+
+//page scoll
+$(function () {
+    $('a.page-scroll').bind('click', function (event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+
+// Highlight the top nav as scrolling occurs
+$('body').scrollspy({
+    target: '.navbar-fixed-top'
+})
+
+
+
+
+
+ 
+$(document).ready(function () {
+    alert("working")
+
+    $.ajax({
+        type: "GET",
+        url: "cpuPartialView",
+        data: { ID: "hiran" },
+
+        dataType: "html",
+
+
+
+        success: function (data) {
+            alert("working2")
+            $("#currentCPUcontainer").html(data);
+
+
+            //var c3 = document.getElementById("cpu-usage").getContext("2d");
+            //window.cpuchart = new Chart(c3).Doughnut(cpudata, {
+            //    responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
+
+            //});
+        }
+    })
+});
+
+
+
+
+
+    
 
 

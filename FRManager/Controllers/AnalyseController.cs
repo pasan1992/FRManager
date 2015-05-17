@@ -12,7 +12,7 @@ namespace FRManager.Controllers
 {
     public class AnalyseController : Controller
     {
-        private DynamicDBContext db = new DynamicDBContext();
+        private DynamicDBContext1 db = new DynamicDBContext1();
 
         // GET: /Analyse/
         public ActionResult Index()
@@ -176,9 +176,32 @@ namespace FRManager.Controllers
         var user = db.DynamicDatabase.Where(m => m.user_name.Contains(ID));
 ;       return PartialView("_showCPU",user);
    }
-      
+
+   
+
+   //computer view controller
+   public ActionResult computerView()
+   {
+       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(1);
+       if (cpuResult == null)
+       {
+           return HttpNotFound();
+       }
+
+       //if (Request.IsAjaxRequest())
+       //{
+       //    return PartialView("_showCPU", cpuResult);
+
+       //}
+       return View(cpuResult);
+   }
 
 
+   public PartialViewResult cpuPartialView(string ID)
+   {
+       var user = db.DynamicDatabase.Where(m => m.user_name.Contains("pasan"));
+       return PartialView("Partial1",user);
+   }
 
 
 

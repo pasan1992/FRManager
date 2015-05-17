@@ -3,105 +3,59 @@
     Layout = "~/Views/Shared/_Custom_Layout.cshtml";
 }
 
+
+<section style="left:10px !important;padding-top:0px !important;">
+    <nav class=" cl-effect-11 n page-scroll">
+        <a href="#" data-hover="Current" class="page-scroll">Current</a>
+        <a href="#com-history" data-hover="History" class="page-scroll">History</a>
+    </nav>
+</section>
+
+
+
 <div class="container-fluid">
-   
-    @*current usage*@
-     <div class="row">
-        
-
-         @*Static info*@
-         <div class="col-md-3">
-             <div class="dash-unit " style="height: 610px;">
-
-                 <p>Device Profile</p>
-                 <hr>
-                 <div class="thumbnail">
-                     <i class="fa fa-desktop" style="font-size:100px;color:#000000;padding-top:20px;"></i>
-                 </div>
-
-                 <h1>Computer 001</h1>
-                 <h3 class="dash-unitH3">Section B</h3>
-
-             </div>
-         </div>
-
-         @*CPU USage*@
-         <div class="col-md-3">
-
-             <div class="dash-unit">
-                 <p>Memory Usage</p>
-                 <hr><br />
-                 <div class="load">
-                     <div class="canvas-holder">
-                         <canvas id="cpu-usage" />
-                     </div>
-                 </div>
-                 <h2>70%</h2>
-             </div>
-          
-          </div>
-
-          @*Memory Usage*@
-        <div class="col-md-3">
-
-            <div class="dash-unit">
-                <p>Memory Usage</p>
-                <hr><br />
-                <div class="load">
-                    <div class="canvas-holder">
-                        <canvas id="memory-usage" />
-                    </div>
-                </div>
-                <h2>70%</h2>
-            </div>
-
-        </div>
-              
-
-       @*Disk Usage*@
-       <div class="col-md-3">
-           
-           <div class="dash-unit">
-               <p>Disk Usage</p>
-               <hr><br />
-               <div class="load">
-                   <div class="canvas-holder">
-                       <canvas id="disk-usage" />
-                   </div>
-               </div>
-               <h2>45%</h2>
-           </div> 
-
-  </div>
-   @*END OF CURRENT DETAIL RAW*@
-
-
-
-
-
-
-</div>
-<script src="~/Scripts/com-chart.js"></script>
-
-
-
-
-
-         </div>
-    @*<div class="row">
-
+    <div class="row">
         <!-- USER PROFILE BLOCK -->
         <div class="col-sm-3 col-lg-3">
             <div class="dash-unit " style="height: 610px;">
-                
-                <p>Device Profile</p>
-                <hr>
+
+                <p class="pstyle">Device Profile</p>
                 <div class="thumbnail">
-                    <i class="fa fa-desktop" style="font-size:100px;color:#000000;padding-top:20px;"></i>
-                    </div>
-              
+
+                    <img src="~/Content/img/c1.png" style="height:130px;width:170px;" />
+                </div>
+
                 <h1>Computer 001</h1>
                 <h3 class="dash-unitH3">Section B</h3>
+                <br /><br />
+
+                @* progress bar *@
+                <h4>(C:)</h4>
+                <div class="col-xs-12 col-sm-12 progress-container">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" style="width:0%"></div>
+                    </div>
+                </div>
+
+                <h4>(D:)</h4>
+                <div class="col-xs-12 col-sm-12 progress-container">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" style="width:0%"></div>
+                    </div>
+                </div>
+
+                @* end progress bar *@
+                <br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Host Name:</strong>kalani-pc </span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Current User:</strong>KALANI-pc$</span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">IP Address:</strong>192.168.1.3</span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Mac Address:</strong>CC:52:AF:97:F2:F2</span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Status:</strong>Online</span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Total Memory:</strong>8Gb</span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Maximum Speed:</strong>2.4Ghz </span><br />
+                <span><strong class="dash-unitH2" style="color:#000000;font-weight:700;">Disk capacity:</strong>60Gb</span><br />
+
+
 
             </div>
         </div>
@@ -110,99 +64,196 @@
         <div class="col-sm-3 col-lg-3">
             <div class="view">
                 <div class="caption">
-  <a href="#"  style="text-decoration: none; color: white;">
-                        <h3 style="padding-top: 40%; position:relative;text-align:center">
-                            View More
-                            <span class="fa fa-search"></span>
-                        </h3>
-                    </a>
+                    <h4 style="padding-top: 20%; position:relative;text-align:center">
+                        Intel(R)core(TM)i5
+                    </h4><hr />
+                    <h5>Max Speed:<span>2.4Ghz</span></h5>
+                    <h5>Speed:<span>0.77Ghz</span></h5>
+                    <h5>Threads:<span>1512</span></h5>
+                    <h5>process:<span>115</span></h5>
+                    <h5>Up Time:<span>1:00:32:55</span></h5>
 
-                   
+
+                </div>
+                <div class="dash-unit ">
+                    <p class="pstyle">CPU Usage</p>
+                    <br />
+                    <div class="canvas-holder">
+                        <canvas id="cpu-usage" />
+                    </div><br />
+                    <h2>82%</h2>
                 </div>
 
+            </div>
+        </div>
+
+
+        <!-- memory usage block-->
+        <div class="col-sm-3 col-lg-3">
+            <div class="view">
+                <div class="caption">
+                    <h4 style="padding-top: 20%; position:relative;text-align:center">
+                        6GB DDR3
+                    </h4><hr />
+                    <h5>Total:<span>6GB</span></h5>
+                    <h5>In Use:<span>4.9GB</span></h5>
+                    <h5>Available:<span>1.9GB</span></h5>
+                </div>
+                <div class="dash-unit">
+                    <p class="pstyle">Memory Usage</p>
+                    <br />
+                    <div class="canvas-holder">
+                        <canvas id="memory-usage" />
+                    </div><br />
+                    <h2>70%</h2>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- disk usage block-->
+        <div class="col-sm-3 col-lg-3">
+            <div class="view">
+                <div class="caption">
+                    <h4 style="padding-top: 20%; position:relative;text-align:center">
+                        Hitachi HTS47564A9E384
+                    </h4><hr />
+                    <h5>Capacity:<span>600GB</span></h5>
+                    <h5>Percentage Disk Time:<span>119</span></h5>
+                    <h5>Percentage Idle Time:<span>0</span></h5>
+                    <h5>Avg Response Time:<span>3.06ms</span></h5>
+                </div>
+
+                <div class="dash-unit">
+                    <p class="pstyle">Disk Usage</p>
+                    <br />
+                    <div class="canvas-holder">
+                        <canvas id="disk-usage" />
+                    </div><br />
+                    <h2>45%</h2>
+                </div>
+            </div>
+        </div>
 
 
 
 
-                                <div class="dash-unit ">
-                                    <p>CPU Usage</p>
-                                    <hr><br />
-                                    <div class="load">
-                                        <div class="canvas-holder">
-                                            <canvas id="cpu-usage" />
-                                        </div>
-                                    </div>
-                                    <h2>82%</h2>
-                                </div>
+        <!--  running apps -->
+        <div class="col-sm-9 col-lg-9">
+            <div class="dash-unit">
+                <table style="width:100%;height:100%;">
+                    <thead>
+                        <tr><th colspan="4">Running Proccesses</th></tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>CPU</th>
+                            <th>Memory</th>
+                            <th>Disk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                            </div>
-                        </div>
+                        <tr>
+                            <td>Google Chrom(32 bit)</td>
+                            <td>0.7%</td>
+                            <td>93.7MB</td>
+                            <td>0</td>
+                        </tr>
 
+                        <tr>
+                            <td>Microsoft Visual Studio</td>
+                            <td>0%</td>
+                            <td>186.4MB</td>
+                            <td>0</td>
+                        </tr>
 
-                        <!-- memory usage block-->
-                        <div class="col-sm-3 col-lg-3">
+                        <tr>
+                            <td>Catalyst Control Center</td>
+                            <td>0.1%</td>
+                            <td>17.1MB</td>
+                            <td>0</td>
+                        </tr>
 
+                        <tr>
+                            <td>Hp Support Assistant Service</td>
+                            <td>0%</td>
+                            <td>3.7MB</td>
+                            <td>0</td>
+                        </tr>
 
-
-
-                            <div class="dash-unit">
-                                <p>Memory Usage</p>
-                                <hr><br />
-                                <div class="load">
-                                    <div class="canvas-holder">
-                                        <canvas id="memory-usage" />
-                                    </div>
-                                </div>
-                                <h2>70%</h2>
-                            </div>
-                        </div>
-
-
-
-                        <!-- disk usage block-->
-                        <div class="col-sm-3 col-lg-3">
-                            <div class="dash-unit">
-                                <p>Disk Usage</p>
-                                <hr><br />
-                                <div class="load">
-                                    <div class="canvas-holder">
-                                        <canvas id="disk-usage" />
-                                    </div>
-                                </div>
-                                <h2>45%</h2>
-                            </div>
-                        </div>
-
-                        <!-- alert-->
-                        <div class="col-sm-3 col-lg-3">
-                            <div class="dash-unit">
-                                <p>Alert</p>
-                                <hr><br />
-                                <div class="load">
-                                    <div class="canvas-holder">
-                                        <canvas id="" />
-                                    </div>
-                                </div>
-                                <h2>70%</h2>
-                            </div>
-                        </div>
+                        <tr>
+                            <td>Google Chrom(32 bit)</td>
+                            <td>0.1%</td>
+                            <td>93.7MB</td>
+                            <td>0</td>
+                        </tr>
 
 
-                        <!-- monthly -->
-                        <div class="col-sm-6 col-lg-6">
-                            <div class="dash-unit">
-                                <p>Monthly usage</p>
-                                <hr><br />
-                                <div class="load">
-                                    <div class="canvas-holderCPU">
-                                        <canvas style="width:auto;" id="" />
-                                    </div>
-                                </div>
-                            </div>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div><!--container-->
+    <p id="com-history" style="visibility:hidden;">link to history</p>
+    @*history heading *@
+
+    <div class="container" style="padding-top:40px;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">History</h2>
+                <h3 class="section-subheading text-muted">Monthly and Yearly Resource Usage</h3>
+            </div>
+        </div>
+    </div>   <!--end of container-->
+    @* history charts starts from here *@
+    <div class="container">
+        <div class="row">
+
+            @*  daily cpu usage *@
+            <div class="col-sm-12 col-lg-12">
+                <div class="dash-unit" style="height: 400px;">
+                    <p class="pstyle" style="text-align:left;">CPU Usage through Previouse month</p>
+                    <br />
+
+                    <canvas id="cpu-daily" height="30" width="100" />
+
+                </div>
+            </div>
+
+            @*  monthly cpu usage*@
+            <div class="col-sm-12 col-lg-12">
+                <div class="dash-unit" style="height: 400px;">
+                    <p class="pstyle" style="text-align:left;">Average CPU Usage through Year</p>
+                    <br />
+                    <canvas id="cpu-monthly" height="30" width="100" />
+                </div>
+            </div>
+
+            @*  monthly cpu usage*@
+            <div class="col-sm-12 col-lg-12">
+                <div class="dash-unit" style="height: 400px;">
+                    <p class="pstyle" style="text-align:left;">Average Memory Usage through Year</p>
+                    <br />
+                    <canvas id="memory-monthly" height="30" width="100" />
+                </div>
+            </div>
+
+            @* avg transfer rate*@
+            <div class="col-sm-12 col-lg-12">
+                <div class="dash-unit" style="height: 400px;">
+                    <p class="pstyle" style="text-align:left;">Average Transfer Rate</p>
+                    <br />
+                    <canvas id="avg-transfer-rate" height="30" width="100" />
+                </div>
+            </div>
 
 
 
 
-                        </div><!--end of 1st raw-->
-                    </div><!--container-->*@
+        </div> <!--end of row-->
 
+
+    </div>   <!--end of container-->

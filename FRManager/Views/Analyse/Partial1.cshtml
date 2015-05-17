@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FRManager.Models.DyanamicDataModel>
+@{
+    ViewBag.Title = "_CurrentCPU";
+    Layout = "";
+}
+<script src="~/Scripts/Chart.js"></script>
+<link href="~/Content/mask.css" rel="stylesheet" />
+<script src="~/Scripts/modernizr.custom.js"></script>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/custom")
+@Scripts.Render("~/bundles/charts")
+<div class="view">
+    <div class="caption">
+        <h4 style="padding-top: 20%; position:relative;text-align:center">
+            Intel(R)core(TM)i5
+        </h4><hr />
+        <h5>Max Speed:<span>2.4Ghz</span></h5>
+        <h5>Speed:<span>0.77Ghz</span></h5>
+        <h5>Threads:<span>1512</span></h5>
+        <h5>process:<span>115</span></h5>
+        <h5>Up Time:<span>1:00:32:55</span></h5>
+
+
+    </div>
+
+    <div class="dash-unit ">
+        <p class="pstyle">CPU Usage</p>
+        <br />
+        <div class="canvas-holder" style="height:150px;">
+            <canvas id="cpu-usage" />
+        </div><br />
+        <h2>@foreach (var item in Model)
+        { @item.cpu_usage} %</h2>
+    </div>
+</div>
+@foreach (var item in Model)
+{
+
+    <script>
+
+        var cpudata = [
+        {
+            value: '@item.cpu_usage',
+            color: "#0c0c40",
+            highlight: "#7265ea",
+            label: "Used"
+        },
+        {
+            value: 100 - '@item.cpu_usage',
+            color: "#3d3d3d",
+            highlight: "#aaa4a4",
+            label: "Rest"
+        }
+        ];
+    </script>
+
+
+
+}
+
+
+

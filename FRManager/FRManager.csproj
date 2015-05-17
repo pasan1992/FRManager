@@ -161,18 +161,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnalyseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataContext\DyanamicData\201505161155158_InitialCreate.cs" />
+    <Compile Include="DataContext\DyanamicData\201505161155158_InitialCreate.Designer.cs">
+      <DependentUpon>201505161155158_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DyanamicData\201505161208415_nadeera.cs" />
+    <Compile Include="DataContext\DyanamicData\201505161208415_nadeera.Designer.cs">
+      <DependentUpon>201505161208415_nadeera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DyanamicData\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504180808398_InitialCreate.cs" />
-    <Compile Include="Migrations\201504180808398_InitialCreate.Designer.cs">
-      <DependentUpon>201504180808398_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505130220555_InitialCreate1.cs" />
-    <Compile Include="Migrations\201505130220555_InitialCreate1.Designer.cs">
-      <DependentUpon>201505130220555_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DyanamicDataModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -198,6 +198,7 @@
     <Content Include="Content\img\bg-image.jpg" />
     <Content Include="Content\img\bg.jpg" />
     <Content Include="Content\img\c.jpg" />
+    <Content Include="Content\img\c1.png" />
     <Content Include="Content\img\plain-grey-background.jpg" />
     <Content Include="Content\img\user.jpg" />
     <Content Include="Content\Login.css" />
@@ -217,6 +218,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
@@ -272,6 +274,9 @@
     <Content Include="Views\Home\Welcome.cshtml" />
     <Content Include="Views\Analyse\CheckGraphs.cshtml" />
     <Content Include="Views\Analyse\_showCPU.cshtml" />
+    <Content Include="Views\Analyse\computerView.cshtml" />
+    <Content Include="Views\Analyse\_CurrentCPU.cshtml" />
+    <Content Include="Views\Analyse\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -284,11 +289,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504180808398_InitialCreate.resx">
-      <DependentUpon>201504180808398_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DataContext\DyanamicData\201505161155158_InitialCreate.resx">
+      <DependentUpon>201505161155158_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505130220555_InitialCreate1.resx">
-      <DependentUpon>201505130220555_InitialCreate1.cs</DependentUpon>
+    <EmbeddedResource Include="DataContext\DyanamicData\201505161208415_nadeera.resx">
+      <DependentUpon>201505161208415_nadeera.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

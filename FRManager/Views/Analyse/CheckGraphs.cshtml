@@ -27,14 +27,14 @@
 
         </div>
 
-        @Ajax.ActionLink("Click", "view1", new AjaxOptions()
+        @*@Ajax.ActionLink("Click", "view1", new AjaxOptions()
    
    {
        HttpMethod = "GET",
        UpdateTargetId = "grapContainer",
        
        InsertionMode = InsertionMode.Replace
-   })
+   })*@
       
 
         @Scripts.Render("~/bundles/jquery")
@@ -61,14 +61,14 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "view1",
+                        url: "cpuPartialView",
                         data: {ID:IDnum},
                         
                         dataType: "html",
                         
                             
                         success: function (data) {
-                          
+                            
                             $("#grapContainer").html(data);
 
 
