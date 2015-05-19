@@ -1,4 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
+
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
 
 namespace FRManager.Models
 {
@@ -60,4 +66,10 @@ namespace FRManager.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+
+
+
+   
+
 }
+    

@@ -1,20 +1,20 @@
 ﻿
 /*disk usage-dougnut */
 
-var doughnutData = [
-        {
-            value: 45,
-            color: "#F7464A",
-            highlight: "#FF5A5E",
-            label: "Used"
-        },
-        {
-            value: 55,
-            color: "#3d3d3d",
-            highlight: "#aaa4a4",
-            label: "Rest"
-        }
-];
+//var doughnutData = [
+//        {
+//            value: 45,
+//            color: "#F7464A",
+//            highlight: "#FF5A5E",
+//            label: "Used"
+//        },
+//        {
+//            value: 55,
+//            color: "#3d3d3d",
+//            highlight: "#aaa4a4",
+//            label: "Rest"
+//        }
+//];
 
 /*memory usage-dougnut */
 //var memorydata = [
@@ -184,10 +184,40 @@ function memoryUsage() {
     })
 }
 
+function diskUsage() {
+   
+
+
+    $.ajax({
+        type: "GET",
+        url: "/Analyse/diskPartialView",
+        data: { ID: idnum },
+
+        dataType: "html",
+
+
+
+        success: function (data) {
+            
+            $("#CurrentDiskContainer").html(data);
+
+
+            var c3 = document.getElementById("disk-usage").getContext("2d");
+            window.cpuchart = new Chart(c3).Doughnut(diskData, {
+                responsive: true, animateRotate: false, animateScale: false, animationEasing: "ease", animationSteps: 1
+
+            });
+            return false;
+        }
+    })
+}
+
+
 
 function all(){
     cpuUsage()
     memoryUsage()
+    diskUsage()
 }
 $(all)
 

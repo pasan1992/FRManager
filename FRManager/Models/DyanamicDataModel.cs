@@ -13,6 +13,8 @@ namespace FRManager.Models
         [Key]
         public int mac { set; get; }
 
+   
+
         [Required]
         public string user_name { set; get; }
         
@@ -32,6 +34,11 @@ namespace FRManager.Models
 
 
     }
+    //public class RunningAppsModel
+    //{
+        
+    //    public string mac { set; get; }
+    //}
 
     public class DynamicDBContext1 : DbContext
     {

@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -161,19 +163,48 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnalyseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataContext\DyanamicData\201505161155158_InitialCreate.cs" />
-    <Compile Include="DataContext\DyanamicData\201505161155158_InitialCreate.Designer.cs">
-      <DependentUpon>201505161155158_InitialCreate.cs</DependentUpon>
+    <Compile Include="DataContext\DBMain\201505180531565_InitialCreate.cs" />
+    <Compile Include="DataContext\DBMain\201505180531565_InitialCreate.Designer.cs">
+      <DependentUpon>201505180531565_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContext\DyanamicData\201505161208415_nadeera.cs" />
-    <Compile Include="DataContext\DyanamicData\201505161208415_nadeera.Designer.cs">
-      <DependentUpon>201505161208415_nadeera.cs</DependentUpon>
+    <Compile Include="DataContext\DBMain\201505180537313_computer table.cs" />
+    <Compile Include="DataContext\DBMain\201505180537313_computer table.Designer.cs">
+      <DependentUpon>201505180537313_computer table.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContext\DyanamicData\Configuration.cs" />
+    <Compile Include="DataContext\DBMain\201505180538384_add another.cs" />
+    <Compile Include="DataContext\DBMain\201505180538384_add another.Designer.cs">
+      <DependentUpon>201505180538384_add another.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190018466_members and sections.cs" />
+    <Compile Include="DataContext\DBMain\201505190018466_members and sections.Designer.cs">
+      <DependentUpon>201505190018466_members and sections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190655002_message.cs" />
+    <Compile Include="DataContext\DBMain\201505190655002_message.Designer.cs">
+      <DependentUpon>201505190655002_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190658156_message2.cs" />
+    <Compile Include="DataContext\DBMain\201505190658156_message2.Designer.cs">
+      <DependentUpon>201505190658156_message2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190707101_message4.cs" />
+    <Compile Include="DataContext\DBMain\201505190707101_message4.Designer.cs">
+      <DependentUpon>201505190707101_message4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190716427_message 5.cs" />
+    <Compile Include="DataContext\DBMain\201505190716427_message 5.Designer.cs">
+      <DependentUpon>201505190716427_message 5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\201505190719038_message 6.cs" />
+    <Compile Include="DataContext\DBMain\201505190719038_message 6.Designer.cs">
+      <DependentUpon>201505190719038_message 6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\DBMain\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\MainDatabaseModel.cs" />
     <Compile Include="Models\DyanamicDataModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,6 +251,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\com-chart.js" />
@@ -277,6 +309,7 @@
     <Content Include="Views\Analyse\computerView.cshtml" />
     <Content Include="Views\Analyse\_CurrentCPU.cshtml" />
     <Content Include="Views\Analyse\_CurrentMEM.cshtml" />
+    <Content Include="Views\Analyse\_CurrentDISK.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,11 +322,32 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DataContext\DyanamicData\201505161155158_InitialCreate.resx">
-      <DependentUpon>201505161155158_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="DataContext\DBMain\201505180531565_InitialCreate.resx">
+      <DependentUpon>201505180531565_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContext\DyanamicData\201505161208415_nadeera.resx">
-      <DependentUpon>201505161208415_nadeera.cs</DependentUpon>
+    <EmbeddedResource Include="DataContext\DBMain\201505180537313_computer table.resx">
+      <DependentUpon>201505180537313_computer table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505180538384_add another.resx">
+      <DependentUpon>201505180538384_add another.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190018466_members and sections.resx">
+      <DependentUpon>201505190018466_members and sections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190655002_message.resx">
+      <DependentUpon>201505190655002_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190658156_message2.resx">
+      <DependentUpon>201505190658156_message2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190707101_message4.resx">
+      <DependentUpon>201505190707101_message4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190716427_message 5.resx">
+      <DependentUpon>201505190716427_message 5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContext\DBMain\201505190719038_message 6.resx">
+      <DependentUpon>201505190719038_message 6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

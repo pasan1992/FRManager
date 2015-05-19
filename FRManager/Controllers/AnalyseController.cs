@@ -12,12 +12,12 @@ namespace FRManager.Controllers
 {
     public class AnalyseController : Controller
     {
-        private DynamicDBContext1 db = new DynamicDBContext1();
-
+        private MainDBContext db1 = new MainDBContext();
+       
         // GET: /Analyse/
         public ActionResult Index()
         {
-            return View(db.DynamicDatabase.ToList());
+            return View(db1.Message.ToList());
         }
 
         // GET: /Analyse/Details/5
@@ -27,7 +27,7 @@ namespace FRManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DyanamicDataModel dyanamicdatamodel = db.DynamicDatabase.Find(id);
+            MessageDataModel dyanamicdatamodel = db1.Message.Find(id);
             if (dyanamicdatamodel == null)
             {
                 return HttpNotFound();
@@ -46,12 +46,12 @@ namespace FRManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="mac,user_name,cpu_usage,memory_usage,disk_free_space,record_date")] DyanamicDataModel dyanamicdatamodel)
+        public ActionResult Create([Bind(Include="mac,user_name,cpu_usage,memory_usage,disk_free_space,record_date")] MessageDataModel dyanamicdatamodel)
         {
             if (ModelState.IsValid)
             {
-                db.DynamicDatabase.Add(dyanamicdatamodel);
-                db.SaveChanges();
+                db1.Message.Add(dyanamicdatamodel);
+                db1.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace FRManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DyanamicDataModel dyanamicdatamodel = db.DynamicDatabase.Find(id);
+            MessageDataModel dyanamicdatamodel = db1.Message.Find(id);
             if (dyanamicdatamodel == null)
             {
                 return HttpNotFound();
@@ -78,12 +78,12 @@ namespace FRManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="mac,user_name,cpu_usage,memory_usage,disk_free_space,record_date")] DyanamicDataModel dyanamicdatamodel)
+        public ActionResult Edit([Bind(Include="mac,user_name,cpu_usage,memory_usage,disk_free_space,record_date")] MessageDataModel dyanamicdatamodel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dyanamicdatamodel).State = EntityState.Modified;
-                db.SaveChanges();
+                db1.Entry(dyanamicdatamodel).State = EntityState.Modified;
+                db1.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(dyanamicdatamodel);
@@ -96,7 +96,7 @@ namespace FRManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DyanamicDataModel dyanamicdatamodel = db.DynamicDatabase.Find(id);
+            MessageDataModel dyanamicdatamodel = db1.Message.Find(id);
             if (dyanamicdatamodel == null)
             {
                 return HttpNotFound();
@@ -109,9 +109,9 @@ namespace FRManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DyanamicDataModel dyanamicdatamodel = db.DynamicDatabase.Find(id);
-            db.DynamicDatabase.Remove(dyanamicdatamodel);
-            db.SaveChanges();
+            MessageDataModel dyanamicdatamodel = db1.Message.Find(id);
+            db1.Message.Remove(dyanamicdatamodel);
+            db1.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,14 +119,14 @@ namespace FRManager.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                db1.Dispose();
             }
             base.Dispose(disposing);
         }
 
         public ActionResult currentCPU()
         {
-            DyanamicDataModel cpuResult = db.DynamicDatabase.Find(1);
+            MessageDataModel cpuResult = db1.Message.Find(1);
             if (cpuResult == null)
             {
                 return HttpNotFound();
@@ -138,7 +138,7 @@ namespace FRManager.Controllers
 
         public ActionResult CheckGraphs()
         {
-            DyanamicDataModel cpuResult = db.DynamicDatabase.Find(1);
+            MessageDataModel cpuResult = db1.Message.Find(1);
             if (cpuResult == null)
             {
                 return HttpNotFound();
@@ -155,7 +155,7 @@ namespace FRManager.Controllers
    [HttpPost]
         public ActionResult CheckGraphs(int id)
         {
-            DyanamicDataModel cpuResult = db.DynamicDatabase.Find(id);
+            MessageDataModel cpuResult = db1.Message.Find(id);
             if (cpuResult == null)
             {
                 return HttpNotFound();
@@ -171,18 +171,18 @@ namespace FRManager.Controllers
         }
 
 
-   public PartialViewResult view1(string ID)
-   {
-        var user = db.DynamicDatabase.Where(m => m.user_name.Contains(ID));
-;       return PartialView("_showCPU",user);
-   }
+//   public PartialViewResult view1(int ID)
+//   {
+//       var user = db1.Message.Where(m => m.user_name.Contains(ID));
+//;       return PartialView("_showCPU",user);
+//   }
 
    
 
    //computer view controller
-   public ActionResult computerView(int id)
+   public ActionResult computerView(string id)
    {
-       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(id);
+       MessageDataModel cpuResult = db1.Message.Find(id);
        if (cpuResult == null)
        {
            return HttpNotFound();
@@ -197,16 +197,25 @@ namespace FRManager.Controllers
    }
 
 
-   public PartialViewResult cpuPartialView(int ID)
+   public PartialViewResult cpuPartialView(string ID)
    {
-       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(ID);
+       DateTime now = DateTime.Now;
+       MessageDataModel cpuResult = db1.Message.Find(ID,now);
        return PartialView("_CurrentCPU", cpuResult);
    }
 
-   public PartialViewResult memoryPartialView(int ID)
+   public PartialViewResult memoryPartialView(string ID)
    {
-       DyanamicDataModel cpuResult = db.DynamicDatabase.Find(ID);
+       DateTime now = DateTime.Now;
+       MessageDataModel cpuResult = db1.Message.Find(ID,now);
        return PartialView("_CurrentMEM", cpuResult);
+   }
+
+   public PartialViewResult diskPartialView(string ID)
+   {
+       DateTime now = DateTime.Now;
+       MessageDataModel cpuResult = db1.Message.Find(ID);
+       return PartialView("_CurrentDISK", cpuResult);
    }
 
 
